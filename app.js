@@ -248,7 +248,7 @@ async function generateNFT(bgparams, face, facewear, shirt, quote, name) {
   ctx.globalCompositeOperation = 'difference';
   ctx.fillStyle = 'white';
   
-  ctx.font = '8px "NFT Font"';
+  ctx.font = '6px "NFT Font"';
   ctx.fillText(wrap(quotes[quote], 10), 64, 16);
   
   ctx.globalCompositeOperation = 'source-over';
