@@ -257,7 +257,7 @@ async function generateNFT(bgparams, face, facewear, shirt, quote, name) {
   
   //console.log(url);
   
-  await sendChat('`mapart ' + url);
+  await sendChat('`mapart ' + url + ' 1 1 false');
   
   for (let uuid of mailingList) await sendChat('/mail send ' + uuid + ' NFT "' + name + '" done! ' + url);
 }
