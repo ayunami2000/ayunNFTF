@@ -1,7 +1,10 @@
 const prefix = 'nft!';
 const fardserver = 'freedom.play.totalfreedom.me';
 const chatDelay = 1500;
-const nftGenDelay = 1000 * 60 * 60; // every hour
+const nftGenDelay = 1000 * 60 * 60 * 2; // every 2 hours
+const mapartRate = 4;
+
+let nftCounter = 0;
 
 const mc = require('minecraft-protocol'),
       { createCanvas, loadImage, registerFont } = require('canvas'),
@@ -257,7 +260,12 @@ async function generateNFT(bgparams, face, facewear, shirt, quote, name) {
   
   //console.log(url);
   
-  await sendChat('`mapart ' + url + ' 1 1 false');
+  nftCounter = (nftCounter + 1) % mapartRate;
+  if (nftCounter == 0) {
+    await sendChat('`mapart ' + url + ' 1 1 false');
+  } else {
+    await sendChat('New NFT just dropped: ' + url);
+  }
   
   for (let uuid of mailingList) await sendChat('/mail send ' + uuid + ' NFT "' + name + '" done! ' + url);
 }
