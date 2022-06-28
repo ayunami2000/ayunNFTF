@@ -3,7 +3,7 @@ const fardserver = 'freedom.play.totalfreedom.me';
 const chatDelay = 1500;
 const nftGenDelay = 1000 * 60 * 60 * 2; // every 2 hours
 const mapartRate = 4;
-const antiAfkTimer = 1000 * 60 * 13; // every 13 minutes
+const antiAfkTimer = 1000 * 60 * 5; // every 5 minutes
 
 let nftCounter = 0;
 
